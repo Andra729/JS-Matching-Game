@@ -2,8 +2,8 @@
  * Positioning function
  ************************************************/
 function imgPostitions () {
-    var x = Math.floor((Math.random() *400));
-    var y = Math.floor((Math.random() *400));
+    var x = Math.floor((Math.random() *300));
+    var y = Math.floor((Math.random() *300));
 
     return {x, y};
 };
@@ -27,7 +27,7 @@ function generateFaces() {
 
         theLeftSide.appendChild(imgElement);
     }
-    /* csalókód */
+    /* cheatings */
     console.log(theLeftSide.lastChild );
  };
 
@@ -42,8 +42,9 @@ function cloneGeneration() {
 
     theRightSide.removeChild(theRightSide.firstChild)
     var cloned = theLeftSide.cloneNode(true);
+    cloned.id =""; 
     theRightSide.appendChild(cloned).removeChild(cloned.lastChild);
-}
+ };
 
 cloneGeneration();
 
@@ -51,7 +52,7 @@ cloneGeneration();
  * ONCLICK event
  ************************************************/
 theLeftSide.lastChild.onclick = function nextLevel(event){
-    while ( !theLeftSide.lastChild.onclick ) {   
+    while ( theLeftSide.lastChild.onclick ) {   
         event.stopPropagation();
         numberOfFaces += 5;
 

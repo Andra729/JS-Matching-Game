@@ -5,19 +5,32 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
-        <h2>Matching Game</h2>
-        <p>Click on the extra smiling face on the left.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" id="header">
+                    <h2>Matching Game</h2>
+                    <p>Click on the extra smiling face in the white box!</p>
+                </div>
+            </div>
 
-        <div id="leftSide">
-
-        </div> 
-
-        <div id="rightSide">
-
+            <div class="row" id="gameSpace">
+                <div class="col-xs-12">
+                    <div id="leftSide">
+                    </div> 
+                </div>
+            </div>
+            
+            <div class="row" id="gameSpace">
+                <div class="col-xs-12">
+                    <div id="rightSide">
+                    </div>
+                </div>
+            </div>
         </div>
     
     <script src="script.js"></script>
