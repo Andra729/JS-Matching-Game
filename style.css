@@ -1,0 +1,38 @@
+body, #rightSide#leftside {
+    background: #4E7DAB;
+    color:white;
+}
+
+#header {
+    text-align: center;
+    margin: 5% 5% .5% 5%;
+    border-bottom: 5px dotted rgba(76, 0, 130, 0.664);
+}
+
+#header h2 {
+    font-weight: bolder;
+}
+
+
+
+div>#leftSide, div>#rightSide {
+    margin: 2%;
+    position: absolute;
+    width: 95%;
+    height: 300px;
+    border: 1px solid black; 
+}
+
+img {
+    position: absolute;
+    max-height: 15%;
+}
+
+#rightSide {
+    top: 450px;
+    margin: none;
+}
+
+#leftSide {
+    background: white;
+}
