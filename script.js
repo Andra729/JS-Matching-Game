@@ -2,10 +2,17 @@
  * Positioning function
  ************************************************/
 function imgPostitions () {
-    var x = Math.floor((Math.random() *300));
-    var y = Math.floor((Math.random() *300));
+    var w = Math.floor( window.innerWidth * 0.8 );
+    var h = Math.floor(window.innerHeight * 0.41 );
+    var h2 = Math.floor(window.innerHeight * 0.35 );
+    var x = Math.floor((Math.random() * w ));
+    var y = Math.floor((Math.random() * h2 ));
 
-    return {x, y};
+    document.getElementById("leftSide").style.height = h + "px";
+    document.getElementById("rightSide").style.height = h + "px";
+
+    console.log("w:" + w +" , h:" + h +" , x:" + x + " , y:" + y);
+    return {x, y, h};
 };
 
 /************************************************

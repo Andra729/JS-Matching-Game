@@ -1,11 +1,24 @@
 body, #rightSide#leftside {
-    background: #4E7DAB;
+    background: #2068af;
     color:white;
+}
+
+.container {
+    width: 100%;
+    max-width: none;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-sm-12 {
+    flex: 0 auto;
 }
 
 #header {
     text-align: center;
-    margin: 5% 5% .5% 5%;
+    margin: 4% 4% .5% 4%;
     border-bottom: 5px dotted rgba(76, 0, 130, 0.664);
 }
 
@@ -13,13 +26,10 @@ body, #rightSide#leftside {
     font-weight: bolder;
 }
 
-
-
 div>#leftSide, div>#rightSide {
-    margin: 2%;
+    margin: 1.3%;
     position: absolute;
-    width: 95%;
-    height: 300px;
+    width: 97.5%;
     border: 1px solid black; 
 }
 
@@ -29,7 +39,7 @@ img {
 }
 
 #rightSide {
-    top: 450px;
+    top: 61%;
     margin: none;
 }
 
