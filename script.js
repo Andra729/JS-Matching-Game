@@ -55,7 +55,7 @@ function generateFaces() {
  };
 
 /************************************************
- * GAME OVER function
+ * GAME OVER function + local store the best result
  ************************************************/
 function gameOver() {
     var current = numberOfFaces/5
@@ -85,13 +85,7 @@ theLeftSide.lastChild.onclick = function nextLevel(event){
         cloneGeneration();
 }*/
 
-function nextLevel(event){ 
-    event.stopPropagation();
-    numberOfFaces += 5;
 
-    generateFaces();
-    cloneGeneration();
-}
 
         /************************************
         do {

@@ -12,14 +12,14 @@ var theBody = document.getElementsByTagName('body')[0];
  
  console.log( theLeftSide.lastChild.onclick );
 
- theLeftSide.lastChild.onclick = ('click', function (event) {
-     event.stopPropagation();
-     numberOfFaces += 5;
+ theLeftSide.lastChild.onclick = function nextLevel(event){ 
+    event.stopPropagation();
+    numberOfFaces += 5;
 
-     generateFaces();
-     cloneGeneration();
-     console.log( theLeftSide.lastChild.onclick );
- });
+    generateFaces();
+    cloneGeneration();
+    console.log( theLeftSide.lastChild.onclick );
+}
 /*
  theLeftSide.lastChild.onwaiting = (event) => {
     numberOfFaces += 5;
@@ -27,22 +27,15 @@ var theBody = document.getElementsByTagName('body')[0];
     generateFaces();
     cloneGeneration();
     console.log( theLeftSide.lastChild.onclick.event );
- }
+ }*/
 
-/* while( theLeftSide.lastChild.onclick != null ){
+ while( !theLeftSide.lastChild.onclick ){
         theLeftSide.lastChild.onclick = function nextLevel(event) {
             event.stopPropagation();
             numberOfFaces += 5;
-
-            if( theLeftSide.lastChild.onclick ){
-                generateFaces();
-                cloneGeneration();
-
-                console.log( theLeftSide.lastChild.onclick );
-            }
-            else if( !theLeftSide.lastChild.onclick ) {
-                theLeftSide.lastChild.onclick = null;
-            }
+            
+            generateFaces();
+            cloneGeneration();
 
         //}
     } 
@@ -58,10 +51,10 @@ while( looping == 1 ) {
         start;
     }
 
-} /* else if( theBody.onlick ){
-    gameWarning();
-} else {
-    gameOver();
 } */
 
-gameOver();
+if( theBody.onclick ){
+    gameWarning();
+} else if ( !theLeftSide.lastChild.onclick ){
+    gameOver();
+}
