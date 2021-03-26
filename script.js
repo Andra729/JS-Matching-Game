@@ -1,8 +1,13 @@
 /************************************************
+ * This is "your" last reso/u/lt
+ ************************************************/
+ var best = localStorage.getItem("best");
+
+/************************************************
  * Positioning function
  ************************************************/
-function imgPostitions () {
-    var w = Math.floor( window.innerWidth * 0.8 );
+function gamePostitioning () {
+    var w = Math.floor( window.innerWidth * 0.9 );
     var h = Math.floor(window.innerHeight * 0.41 );
     var h2 = Math.floor(window.innerHeight * 0.35 );
     var x = Math.floor((Math.random() * w ));
@@ -10,10 +15,8 @@ function imgPostitions () {
 
     document.getElementById("leftSide").style.height = h + "px";
     document.getElementById("rightSide").style.height = h + "px";
-
-    console.log("w:" + w +" , h:" + h +" , x:" + x + " , y:" + y);
-    return {x, y, h};
-};
+    return {x, y};
+ };
 
 /************************************************
  * LeftSide smiling faces generator
@@ -29,61 +32,100 @@ function generateFaces() {
         var imgElement = document.createElement('IMG');
 
         imgElement.src = "smile.png";
-        imgElement.style.top = imgPostitions().y + "px";
-        imgElement.style.left = imgPostitions().x + "px";
+        imgElement.style.top = gamePostitioning().y + "px";
+        imgElement.style.left = gamePostitioning().x + "px";
 
         theLeftSide.appendChild(imgElement);
     }
-    /* cheatings */
-    console.log(theLeftSide.lastChild );
+    /* cheating */
+    console.log(theLeftSide.lastChild);
  };
-
-onload = generateFaces();
-
- /************************************************
+ 
+/************************************************
  * Cloning the left-1 to RightSide
  ************************************************/
-var theRightSide = document.getElementById('rightSide');
+  var theRightSide = document.getElementById('rightSide');
 
-function cloneGeneration() {
-
-    theRightSide.removeChild(theRightSide.firstChild)
-    var cloned = theLeftSide.cloneNode(true);
-    cloned.id =""; 
-    theRightSide.appendChild(cloned).removeChild(cloned.lastChild);
+  function cloneGeneration() {
+  
+      theRightSide.removeChild(theRightSide.firstChild)
+      var cloned = theLeftSide.cloneNode(true);
+      cloned.id =""; 
+      theRightSide.appendChild(cloned).removeChild(cloned.lastChild);
  };
 
-cloneGeneration();
+/************************************************
+ * GAME OVER function
+ ************************************************/
+function gameOver() {
+    var current = numberOfFaces/5
 
- /************************************************
+    if( !best || best < current){
+        best = localStorage.setItem('best', current);
+    }else{
+        best = localStorage.getItem('best');
+    }
+
+    alert(
+        'Game OVER!\n\n' +
+        'Current level: ' + current + '. level\n\n' +
+        'Your best result: ' + best + '. level'
+        );
+ }
+
+/************************************************
  * ONCLICK event
  ************************************************/
-theLeftSide.lastChild.onclick = function nextLevel(event){
-    while ( theLeftSide.lastChild.onclick ) {   
+/*
+theLeftSide.lastChild.onclick = function nextLevel(event){ 
         event.stopPropagation();
         numberOfFaces += 5;
 
         generateFaces();
-        cloneGeneration();}
-};
+        cloneGeneration();
+}*/
 
+function nextLevel(event){ 
+    event.stopPropagation();
+    numberOfFaces += 5;
+
+    generateFaces();
+    cloneGeneration();
+}
+
+        /************************************
+        do {
+            event.stopPropagation();
+            numberOfFaces += 5;
+
+            generateFaces();
+            cloneGeneration();
+            
+        } while ( !theLeftSide.lastChild.onclick );
+
+
+function clickToNextLevel() {
+    console.log( theLeftSide.lastChild.onclick + " ez az amaz ");
+
+    if( !theLeftSide.lastChild.onclick ){
+        theLeftSide.lastChild.onclick = function nextLevel(event){
+            event.stopPropagation();
+            numberOfFaces += 5;
+    
+            generateFaces();
+            cloneGeneration();
+        }
+    } else{
+        gameOver();
+    }
+}
 
  /************************************************
  * BODYCLICK event
  ************************************************/
-var theBody = document.getElementsByTagName('body')[0];
+function gameWarning() {
 
-theBody.onclick = function gameOver() {
+    alert('To play, click the extra face in the white box!\n\nClick "ok" to continue');
 
-    alert("Game Over!\n\n" + numberOfFaces/5 +". level");
-
-    theBody.onclick = null;
-
-    theLeftSide.lastChild.onclick = null;
 };
 
- /************************************************
- * Repetition
- ************************************************/
-/*
-Faszom tudja, már mindent kipróbáltam...*/
