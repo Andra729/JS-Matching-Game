@@ -44,5 +44,6 @@ img {
 }
 
 #leftSide {
-    background: white;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 7px #000000;
 }

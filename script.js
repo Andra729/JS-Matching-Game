@@ -7,7 +7,7 @@
  * Positioning function
  ************************************************/
 function gamePostitioning () {
-    var w = Math.floor( window.innerWidth * 0.9 );
+    var w = Math.floor( window.innerWidth * 0.85 );
     var h = Math.floor(window.innerHeight * 0.41 );
     var h2 = Math.floor(window.innerHeight * 0.35 );
     var x = Math.floor((Math.random() * w ));
@@ -52,15 +52,23 @@ function generateFaces() {
   
       theRightSide.removeChild(theRightSide.firstChild)
       var cloned = theLeftSide.cloneNode(true);
-      cloned.id =""; 
+      cloned.id="clone";
       theRightSide.appendChild(cloned).removeChild(cloned.lastChild);
+
+      var items = theRightSide.getElementsByTagName('img');
+
+      for( j =0; j < items.length; j++ ){
+          items[j].removeAttribute('id');
+          items[j].removeAttribute('onClick');
+      }
+      
  };
 
 /************************************************
  * GAME OVER function + local store the best result
  ************************************************/
 function gameOver() {
-    var current = numberOfFaces/5
+    var current = numberOfFaces/5;
 
     if( !best || best < current){
         best = localStorage.setItem('best', current);
@@ -68,11 +76,19 @@ function gameOver() {
         best = localStorage.getItem('best');
     }
 
-    alert(
-        'Game OVER!\n\n' +
-        'Current level: ' + current + '. level\n\n' +
-        'Your best result: ' + best + '. level'
-        );
+    if ( !best ) {
+        alert(
+            'Game OVER!\n\n' +
+            'Current level: ' + current + '. level\n\n' +
+            'Your best result: ' + current + '. level'
+            );
+    } else {
+        alert(
+            'Game OVER!\n\n' +
+            'Current level: ' + current + '. level\n\n' +
+            'Your best result: ' + best + '. level'
+            );
+    }
  }
 
 /************************************************
