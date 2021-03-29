@@ -21,17 +21,19 @@ function gamePostitioning () {
 /************************************************
  * LeftSide smiling faces generator
  ************************************************/
-var numberOfFaces = 5;
+var numberOfFaces = 0;
 var theLeftSide = document.getElementById('leftSide');
 
 function generateFaces() {
     theLeftSide.innerHTML = "";
 
-    for (var i = 0; i < numberOfFaces; i++) {
+    for (var i = 1; i <= numberOfFaces; i++) {
         
         var imgElement = document.createElement('IMG');
 
         imgElement.src = "smile.png";
+        imgElement.id = i;
+        imgElement.setAttribute("onClick", "nextLevel(this.id)");
         imgElement.style.top = gamePostitioning().y + "px";
         imgElement.style.left = gamePostitioning().x + "px";
 
@@ -74,42 +76,19 @@ function gameOver() {
  }
 
 /************************************************
- * ONCLICK event
+ * ONCLICK event to repeat
  ************************************************/
-/*
-theLeftSide.lastChild.onclick = function nextLevel(event){ 
-        event.stopPropagation();
-        numberOfFaces += 5;
+function nextLevel(id) {
 
+    if( id == numberOfFaces ){
+        numberOfFaces += 5;
         generateFaces();
         cloneGeneration();
-}*/
 
-
-
-        /************************************
-        do {
-            event.stopPropagation();
-            numberOfFaces += 5;
-
-            generateFaces();
-            cloneGeneration();
-            
-        } while ( !theLeftSide.lastChild.onclick );
-
-
-function clickToNextLevel() {
-    console.log( theLeftSide.lastChild.onclick + " ez az amaz ");
-
-    if( !theLeftSide.lastChild.onclick ){
-        theLeftSide.lastChild.onclick = function nextLevel(event){
-            event.stopPropagation();
-            numberOfFaces += 5;
-    
-            generateFaces();
-            cloneGeneration();
+    } else {
+        for( j=0; j<numberOfFaces; j++ ){
+            document.getElementById( j+1 ).removeAttribute('onClick');
         }
-    } else{
         gameOver();
     }
 }
