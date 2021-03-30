@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- HEAD -->
     <head>
-        <title>.JS Matching Game v1.0</title>
+        <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- icon -->
         <link rel="shortcut icon" type="image/jpg" href="smile.png"/>
+        <!-- Style sheets -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
 
+        <!-- Primary Meta Tags -->
+        <meta name="title" content=".JS Matching Game v1.0">
+        <meta name="description" content="This is a small web browser game to show my skills and process of keeping in mind an updating my .js knowledge. Enjoy."/>
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://matching.andrass.eu/">
+        <meta property="og:title" content=".JS Matching Game v1.0">
+        <meta property="og:description" content="This is a small web browser game to show my skills and process of keeping in mind an updating my .js knowledge. Enjoy.">
+        <meta property="og:image" content="https://matching.andrass.eu/preview.png">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="http://matching.andrass.eu/">
+        <meta property="twitter:title" content=".JS Matching Game v1.0">
+        <meta property="twitter:description" content="This is a small web browser game to show my skills and process of keeping in mind an updating my .js knowledge. Enjoy.">
+        <meta property="twitter:image" content="https://matching.andrass.eu/preview.png">
     </head>
+    <!-- BODY -->
     <body>
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12" id="header">
-                    <h3>.JS Matching v1.0</h3>
+            <div class="row"id="header">
+                <div class="col-sm-12">
+                    <h3>.JS Matching <span id="game-version"></span></h3>
                     <p>Click on the extra smiling face in the white box! Learn how to play:<span class="bi bi-info-circle"></span></p>
                 </div>
+
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-outline-light">Start</button>
+                </div>
+                <div class="col-sm-4">
+                    <input class="btn btn-outline-light" type="button" value="" disabled id="game-level">
+                </div>
+            </div>
+
+            <div class="row">
+                
             </div>
 
             <div class="row" id="gameSpace">
@@ -34,7 +66,10 @@
             </div>
         </div>
     
+    <!-- scripts -->
     <script src="script.js"></script>
     <script src="runtime.js"></script>
     </body>
+
+<!-- EOF -->
 </html>

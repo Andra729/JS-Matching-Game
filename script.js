@@ -1,7 +1,15 @@
 /************************************************
- * This is "your" last reso/u/lt
+ * Game verison
+ ************************************************/
+ var version = "v1.1"
+ document.getElementById('game-version').textContent = version;
+ document.title = ".JS Matching Game " + version;
+
+ /************************************************
+ * This is "your" last and best reso/u/lt
  ************************************************/
  var best = localStorage.getItem("best");
+ var current = 0;
 
 /************************************************
  * Positioning function
@@ -39,6 +47,9 @@ function generateFaces() {
 
         theLeftSide.appendChild(imgElement);
     }
+
+    current = numberOfFaces/5;
+    document.getElementById('game-level').setAttribute('value', current + '. level');
     /* cheating */
     console.log(theLeftSide.lastChild);
  };
@@ -68,7 +79,6 @@ function generateFaces() {
  * GAME OVER function + local store the best result
  ************************************************/
 function gameOver() {
-    var current = numberOfFaces/5;
 
     if( !best || best < current){
         best = localStorage.setItem('best', current);

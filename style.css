@@ -12,18 +12,31 @@ body, #rightSide#leftside {
     margin-left: auto;
 }
 
-.col-sm-12 {
+.col-sm-12{
     flex: 0 auto;
+}
+
+.col-sm-4 {
+    flex: 0 auto;
+    max-width: 50%;
+    padding-bottom: 5px;
+}
+
+#game-level:disabled{
+   opacity: 1;
+   color: #FFD662FF;
+   border-color:#FFD662FF;
 }
 
 #header {
     text-align: center;
     margin: 4% 4% .5% 4%;
-    border-bottom: 5px dotted rgba(76, 0, 130, 0.664);
+    border-bottom: 4px dotted rgba(76, 0, 130, 0.664);
 }
 
-#header h2 {
+#header h3 {
     font-weight: bolder;
+    color: #FFD662FF;
 }
 
 div>#leftSide, div>#rightSide {
@@ -39,7 +52,7 @@ img {
 }
 
 #rightSide {
-    top: 61%;
+    top: 64%;
     margin: none;
 }
 
