@@ -142,4 +142,12 @@
  /************************************************
  * onInfo() clicked
  ************************************************/
-
+ function onInfo() {
+     confirm(
+         'You should see 2 boxes on your screen. Both boxes are displaying smiling faces to you. The white box is your playing area.\n\n' +
+         'In the white one, there is one more face displayed. You have to find it, and click/tap on it.\n' +
+         'If your guess was right, on the next level, it will generate 5 more faces in the gaming area, and so and so. Evey time you have to find the extra, and the game continues atomatically.\n\n' +
+         'Enjoy!\n\n' + 
+         'If any trouble contact me on me@andrass.eu or on my site on the link below.'
+     );
+ }
