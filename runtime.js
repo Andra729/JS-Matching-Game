@@ -3,9 +3,10 @@
  * ONLOAD
  ************************************************/
 
-numberOfFaces += 5;
-generateFaces(),
-cloneGeneration();
+
+ numberOfFaces += 5;
+ generateFaces();
+ cloneGeneration();
 
 
  while ( onclick ) {

@@ -13,20 +13,20 @@
         <link rel="stylesheet" href="style.css">
 
         <!-- Primary Meta Tags -->
-        <meta name="title" content=".JS Matching Game v1.0">
+        <meta name="title" content=".JS Matching Game">
         <meta name="description" content="This is a small web browser game to show my skills and process of keeping in mind an updating my .js knowledge. Enjoy."/>
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="http://matching.andrass.eu/">
-        <meta property="og:title" content=".JS Matching Game v1.0">
+        <meta property="og:title" content=".JS Matching Game">
         <meta property="og:description" content="This is a small web browser game to show my skills and process of keeping in mind an updating my .js knowledge. Enjoy.">
         <meta property="og:image" content="https://matching.andrass.eu/preview.png">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="http://matching.andrass.eu/">
-        <meta property="twitter:title" content=".JS Matching Game v1.0">
+        <meta property="twitter:title" content=".JS Matching Game">
         <meta property="twitter:description" content="This is a small web browser game to show my skills and process of keeping in mind an updating my .js knowledge. Enjoy.">
         <meta property="twitter:image" content="https://matching.andrass.eu/preview.png">
     </head>
@@ -35,40 +35,52 @@
         <div class="container">
             <div class="row"id="header">
                 <div class="col-sm-12">
-                    <h3>.JS Matching <span id="game-version"></span></h3>
-                    <p>Click on the extra smiling face in the white box! Learn how to play:<span class="bi bi-info-circle"></span></p>
+                    <h3>Match it</h3><span style="display: none;" id="game-version"></span>
+                    <p>Click on the extra smiling face in the white box! Learn how to play: <i id="info" class="bi bi-info-circle"></i></p>
                 </div>
 
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-outline-light">Start</button>
+                    <button id="start" type="button" class="btn btn-outline-light">Play again</button>
                 </div>
                 <div class="col-sm-4">
                     <input class="btn btn-outline-light" type="button" value="" disabled id="game-level">
                 </div>
             </div>
 
-            <div class="row">
-                
-            </div>
-
-            <div class="row" id="gameSpace">
-                <div class="col-xs-12">
-                    <div id="leftSide">
-                    </div> 
+            <div id="game-container">
+                <div class="row" id="gameSpace">
+                    <div class="col-xs-12">
+                        <div id="leftSide">
+                        </div> 
+                    </div>
                 </div>
-            </div>
-            
-            <div class="row" id="gameSpace">
-                <div class="col-xs-12">
-                    <div id="rightSide">
+                
+                <div class="row" id="gameSpace">
+                    <div class="col-xs-12">
+                        <div id="rightSide">
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="footer">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="footer" class="text-center p-3">
+                            &copy 2021, Made by:
+                            <strong>
+                                <a href="https://www.andrass.eu/" target="_blank">andrass.eu</a>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-    
-    <!-- scripts -->
-    <script src="script.js"></script>
-    <script src="runtime.js"></script>
+
+        <!-- scripts -->
+        <script src="script.js"></script>
+        <script src="runtime.js"></script>
     </body>
 
 <!-- EOF -->
