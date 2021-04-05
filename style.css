@@ -1,7 +1,8 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400|Playfair+Display:400,700,400italic|Libre+Baskerville:400,700,400italic|Muli:300,400|Open+Sans:400,300,700|Oswald:400,700|Raleway:400,100,300,700|Montserrat:400,700|Merriweather:400,300,300italic,400italic,700|Bree+Serif|Vollkorn:400italic,400,700|Abril+Fatface|Cardo:400,400italic");
 
 body, #rightSide#leftside {
-    background: #1d5c9b;
+    background: linear-gradient(90deg, #485563 10%, #29323c 90%);
     color:white;
 }
 
@@ -33,19 +34,31 @@ body, #rightSide#leftside {
 #header {
     text-align: center;
     margin: 4% 4% .5% 4%;
-    border-bottom: 4px dotted rgba(76, 0, 130, 0.664);
+    border-bottom: 4px dotted #FFD662FF;
 }
 
-#header h3 {
+#header h2 {
     font-weight: bolder;
     color: #FFD662FF;
+    font-family: 'Vollkorn';
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+}
+
+.regular{
+    font-weight: 400;
+}
+
+#header p {
+    font-family: 'Oswald';
+    letter-spacing: 3px;
 }
 
 div>#leftSide, div>#rightSide {
     margin: 1.3%;
     position: absolute;
     width: 97.5%;
-    border: 1px solid black; 
+    border: 1.5px solid black; 
 }
 
 img {

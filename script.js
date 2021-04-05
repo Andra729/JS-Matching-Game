@@ -1,7 +1,7 @@
 /************************************************
  * Game verison
  ************************************************/
- var version = "v1.6"
+ var version = "v1.7"
  document.getElementById('game-version').textContent = version;
  document.title = ".JS Matching Game " + version;
 
